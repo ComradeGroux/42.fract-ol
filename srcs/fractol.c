@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   fractol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 19:19:14 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/02 17:40:24 by vgroux           ###   ########.fr       */
+/*   Created: 2022/11/02 15:40:44 by vgroux            #+#    #+#             */
+/*   Updated: 2022/11/02 16:58:50 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#include "fractol.h"
 
-# include <math.h>
-# include "../libft/libft.h"
-# include "../mlx/mlx.h"
-
-int	main(int argc, char **argv);
-
-#endif
+int	main(int argc, char **argv)
+{
+	return (0);
+}

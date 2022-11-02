@@ -6,7 +6,7 @@
 #    By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:49:40 by vgroux            #+#    #+#              #
-#    Updated: 2022/11/02 15:39:16 by vgroux           ###   ########.fr        #
+#    Updated: 2022/11/02 16:43:58 by vgroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,9 +34,10 @@ DIR_MLX = mlx/
 MLX_INC = -I ${DIR_MLX}
 MLX =	${DIR_MLX}libmlx.a
 
-LIBS = -L ${DIR_LIBFT} -lft -L ${DIR_MLX} -lmlx
+LIBS = -L ${DIR_LIBFT} -lft -L ${DIR_MLX} -lmlx -framework OpenGL -framework AppKit
 
-SRCS_LIST =	test.c \
+SRCS_LIST =	fractol.c \
+			fractol_error.c \
 
 SRCS =		${addprefix ${DIR_S}, ${SRCS_LIST}}
 
@@ -72,13 +73,15 @@ clean:
 	@echo "$(RED) ██║     ██║     ██╔══╝  ██╔══██║██║╚██╗██║██║██║╚██╗██║██║   ██║$(RESET)"
 	@echo "$(RED) ╚██████╗███████╗███████╗██║  ██║██║ ╚████║██║██║ ╚████║╚██████╔╝$(RESET)"
 	@echo "$(RED)  ╚═════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═══╝ ╚═════╝ $(RESET)"
+	${RM} ${OBJS}
+
+libclean:
+	@echo "Clean de MiniLibX"
 	${MAKE} -sC ${DIR_MLX} clean
 	@echo "Clean de libft"
 	${MAKE} -sC ${DIR_LIBFT} fclean
-	@echo "Clean de ${NAME}"
-	${RM} ${OBJS}
 
-fclean: clean
+fclean: clean libclean
 	${RM} ${NAME}
 
 re: fclean all
