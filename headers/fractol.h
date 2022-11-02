@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 19:19:14 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/01 19:34:28 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/02 13:02:47 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FRACTOL_H
 
 # include <math.h>
-# include "libft.h"
-# include "mlx.h"
+# include "../libft/libft.h"
+# include "../mlx/mlx.h"
 
 #endif
