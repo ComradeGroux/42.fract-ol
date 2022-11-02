@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 19:19:14 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/02 17:40:24 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/02 23:12:05 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <math.h>
 # include "../libft/libft.h"
-# include "../mlx/mlx.h"
 
 int	main(int argc, char **argv);
 

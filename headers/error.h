@@ -6,13 +6,14 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:00:22 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/02 18:18:01 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/02 23:20:43 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ERROR_H
 # define ERROR_H
 
+# define ID_ERROR_WRONG_FRACTAL_NAME 1
 # define ERROR_WRONG_FRACTAL_NAME  "Mauvais non de fractal.\n"
 # define ERROR_NBR_ARG "Nombre d'arguments non valide.\n"
 # define ERROR_FLOAT "Vous devez entrer un nombre a virgule pour generer \

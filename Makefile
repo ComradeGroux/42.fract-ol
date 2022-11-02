@@ -6,7 +6,7 @@
 #    By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:49:40 by vgroux            #+#    #+#              #
-#    Updated: 2022/11/02 16:43:58 by vgroux           ###   ########.fr        #
+#    Updated: 2022/11/03 00:13:44 by vgroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,15 +26,24 @@ DIR_H = headers/
 DIR_S =	srcs/
 DIR_O =	objs/
 
+# Compile la Libft
 DIR_LIBFT = libft/
 LIBFT_INC = -I ${DIR_LIBFT}
 LIBFT =	${DIR_LIBFT}libft.a
+FT_LNK = -L ${DIR_LIBFT} -l ft
 
-DIR_MLX = mlx/
+# Compile la MiniLibX suivant l'OS
+ifeq (${shell uname}, Linux)
+	DIR_MLX = mlx_linux/
+	MLX_LNK	= -L $(MLX) -lXext -lX11 -lbsd -l mlx
+else
+	DIR_MLX = mlx_macos/
+	MLX_LNK	= -L $(MLX) -l mlx -framework OpenGL -framework AppKit
+endif
 MLX_INC = -I ${DIR_MLX}
 MLX =	${DIR_MLX}libmlx.a
 
-LIBS = -L ${DIR_LIBFT} -lft -L ${DIR_MLX} -lmlx -framework OpenGL -framework AppKit
+LIBS = ${FT_LNK} ${MLX_LNK}
 
 SRCS_LIST =	fractol.c \
 			fractol_error.c \
@@ -44,12 +53,12 @@ SRCS =		${addprefix ${DIR_S}, ${SRCS_LIST}}
 OBJS =		${SRCS:${DIR_S}%.c=${DIR_O}%.o}
 
 ${NAME}: ${LIBFT} ${MLX} ${OBJS}
-	@echo "$(GREENGREEN)   ██████╗██████╗  █████╗  ██████╗████████╗    ██████╗ ██╗$(RESET)"
-	@echo "$(GREENGREEN)   ██╔════╝██╔══██╗██╔══██╗██╔════╝╚══██╔══╝   ██╔═══██╗██║$(RESET)"
-	@echo "$(GREENGREEN)   █████╗  ██████╔╝███████║██║        ██║█████╗██║   ██║██║$(RESET)"
-	@echo "$(GREENGREEN)   ██╔══╝  ██╔══██╗██╔══██║██║        ██║╚════╝██║   ██║██║$(RESET)"
-	@echo "$(GREENGREEN)   ██║     ██║  ██║██║  ██║╚██████╗   ██║      ╚██████╔╝███████╗$(RESET)"
-	@echo "$(GREENGREEN)   ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝       ╚═════╝ ╚══════╝$(RESET)"
+	@echo "$(GREENGREEN) ██████╗██████╗  █████╗  ██████╗████████╗    ██████╗ ██╗$(RESET)"
+	@echo "$(GREENGREEN) ██╔════╝██╔══██╗██╔══██╗██╔════╝╚══██╔══╝   ██╔═══██╗██║$(RESET)"
+	@echo "$(GREENGREEN) █████╗  ██████╔╝███████║██║        ██║█████╗██║   ██║██║$(RESET)"
+	@echo "$(GREENGREEN) ██╔══╝  ██╔══██╗██╔══██║██║        ██║╚════╝██║   ██║██║$(RESET)"
+	@echo "$(GREENGREEN) ██║     ██║  ██║██║  ██║╚██████╗   ██║      ╚██████╔╝███████╗$(RESET)"
+	@echo "$(GREENGREEN) ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝       ╚═════╝ ╚══════╝$(RESET)"
 	${CC} ${LIBS} ${OBJS} -o ${NAME}
 
 ${LIBFT}:

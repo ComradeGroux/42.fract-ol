@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strtocase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/25 12:53:54 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/02 22:47:45 by vgroux           ###   ########.fr       */
+/*   Created: 2022/11/02 23:55:09 by vgroux            #+#    #+#             */
+/*   Updated: 2022/11/03 00:02:58 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+char	*ft_strtocase(char *s, int (*f)(int))
 {
-	if (n == -2147483648)
-		ft_putstr_fd("-2147483648", fd);
-	else if (n < 0)
+	size_t	i;
+
+	i = 0;
+	while (s[i])
 	{
-		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(n * -1, fd);
+		s[i] = f(s[i]);
+		i++;
 	}
-	else if (n > 9)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
-	}
-	else
-		ft_putchar_fd(n + '0', fd);
+	return (s);
 }
