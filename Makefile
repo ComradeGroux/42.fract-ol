@@ -6,7 +6,7 @@
 #    By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:49:40 by vgroux            #+#    #+#              #
-#    Updated: 2022/11/03 00:13:44 by vgroux           ###   ########.fr        #
+#    Updated: 2022/11/03 11:05:59 by vgroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ else
 	MLX_LNK	= -L $(MLX) -l mlx -framework OpenGL -framework AppKit
 endif
 MLX_INC = -I ${DIR_MLX}
-MLX =	${DIR_MLX}libmlx.a
+MLX =	mlx
 
 LIBS = ${FT_LNK} ${MLX_LNK}
 

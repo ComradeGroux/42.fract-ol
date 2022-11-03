@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 12:20:07 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/02 23:59:01 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/03 11:12:52 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,6 @@ int		ft_gnl_strchr(char *str);
 char	*ft_gnl_strjoin(char *line, char *buff);
 char	*ft_gnl_strndup(char *str, size_t end);
 char	*ft_gnl_remove_free(char *buffer);
-char	*ft_strtocase(char *s, int (f)(int));
+char	*ft_strtocase(char *s, int (*f)(int));
 
 #endif
