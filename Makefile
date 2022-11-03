@@ -6,13 +6,12 @@
 #    By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:49:40 by vgroux            #+#    #+#              #
-#    Updated: 2022/11/03 12:03:25 by vgroux           ###   ########.fr        #
+#    Updated: 2022/11/03 12:46:56 by vgroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 GREENGREEN = \033[38;5;46m
 RED = \033[0;31m
-BLUE = \033[0;34m
 GREY = \033[38;5;240m
 RESET = \033[0m
 
@@ -62,9 +61,10 @@ ${NAME}: ${LIBFT} ${MLX} ${OBJS}
 	${CC} ${LIBS} ${OBJS} -o ${NAME}
 
 ${LIBFT}:
-	@echo "[$(GREENGREEN)Fract-ol$(RESET)]: Creating Libft..."
+	@echo "[$(GREENGREEN)Fract-ol$(RESET)]: Creating Libft...${GREY}"
 	${MAKE} -sC ${@D}
 	@echo "$(RESET)[$(GREENGREEN)Fract-ol$(RESET)]: Libft Objects were created\n"
+
 ${MLX}:
 	@echo "[$(GREENGREEN)Fract-ol$(RESET)]: Creating MiniLibX...$(GREY)"
 	${MAKE} -sC ${@D}
