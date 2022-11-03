@@ -6,7 +6,7 @@
 #    By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:49:40 by vgroux            #+#    #+#              #
-#    Updated: 2022/11/03 12:46:56 by vgroux           ###   ########.fr        #
+#    Updated: 2022/11/03 14:36:31 by vgroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,16 @@ RM =         rm -f
 DIR_H = headers/
 DIR_S =	srcs/
 DIR_O =	objs/
+
+SRCS_LIST =	fractol.c \
+			error.c \
+			window.c \
+			images.c \
+			hook.c \
+
+SRCS =		${addprefix ${DIR_S}, ${SRCS_LIST}}
+
+OBJS =		${SRCS:${DIR_S}%.c=${DIR_O}%.o}
 
 # Compile la Libft
 DIR_LIBFT = libft/
@@ -43,13 +53,6 @@ MLX_INC = -I ${DIR_MLX}
 MLX =	${DIR_MLX}libmlx.a
 
 LIBS = ${FT_LNK} ${MLX_LNK}
-
-SRCS_LIST =	fractol.c \
-			fractol_error.c \
-
-SRCS =		${addprefix ${DIR_S}, ${SRCS_LIST}}
-
-OBJS =		${SRCS:${DIR_S}%.c=${DIR_O}%.o}
 
 ${NAME}: ${LIBFT} ${MLX} ${OBJS}
 	@echo "$(GREENGREEN) ██████╗██████╗  █████╗  ██████╗████████╗    ██████╗ ██╗$(RESET)"
