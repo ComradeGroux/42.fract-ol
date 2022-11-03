@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 14:27:34 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/03 17:14:37 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/03 17:33:43 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	key_hook(int keycode)
 {
-	if (keycode == KEY_ESC)
+	if (keycode == ESC)
 		exit(1);
 	return (0);
 }
