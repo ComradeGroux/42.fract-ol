@@ -6,7 +6,7 @@
 #    By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:49:40 by vgroux            #+#    #+#              #
-#    Updated: 2022/11/03 14:36:31 by vgroux           ###   ########.fr        #
+#    Updated: 2022/11/03 17:31:03 by vgroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRCS_LIST =	fractol.c \
 			window.c \
 			images.c \
 			hook.c \
+			color.c \
 
 SRCS =		${addprefix ${DIR_S}, ${SRCS_LIST}}
 

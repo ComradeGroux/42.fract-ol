@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   images.c                                           :+:      :+:    :+:   */
+/*   color.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 14:18:27 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/03 17:30:47 by vgroux           ###   ########.fr       */
+/*   Created: 2022/11/03 17:28:09 by vgroux            #+#    #+#             */
+/*   Updated: 2022/11/03 17:30:02 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#ifndef COLOR_H
+# define COLOR_H
 
-t_data	render_square(t_window mlx)
-{
-	t_data	img;
-	int		i;
-	int		j;
+# include <stdint.h>
 
-	img.img = mlx_new_image(mlx.mlx, 1920, 1080);
-	img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_len, &img.endian);
-	i = 0;
-	while (i <= 42)
-	{
-		j = 0;
-		while (j <= 42)
-		{
-			my_mlx_pixel_put(&img, i, j, encode_rgb(255, 255, 255));
-			j++;
-		}
-		i++;
-	}
-	return (img);
-}
+int	encode_rgb(uint8_t red, uint8_t green, uint8_t blue);
+
+#endif
