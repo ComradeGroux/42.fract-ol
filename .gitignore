@@ -1,6 +1,0 @@
-*.o
-*.a
-fractol
-a.out
-.DS_Store
-test.c

@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:00:22 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/03 17:15:45 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/04 14:46:24 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 	Fractal de Mandelbrot:		./fractol mandelbrot\n \
 	Fractal de Julia:			./fractal 0.28 0.01 julia\n\n"
 
-int	ft_error_arg(char *error);
-int	ft_check_arg(int argc, char **argv);
+void	ft_error_arg(int errcode);
+int		ft_check_arg(int argc, char **argv);
 
 #endif

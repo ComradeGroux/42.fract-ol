@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.c                                           :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 14:00:50 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/03 17:34:21 by vgroux           ###   ########.fr       */
+/*   Created: 2022/11/04 16:10:38 by vgroux            #+#    #+#             */
+/*   Updated: 2022/11/04 17:59:41 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-t_window	create_window(void)
+void	put_pixel(t_data *data, int x, int y, int color)
 {
-	t_window	mlx;
+	char	*dst;
 
-	mlx.mlx = mlx_init();
-	mlx.win = mlx_new_window(mlx.mlx, 1920, 1080, "Fract-ol");
-	return (mlx);
+	dst = data->addr + (y * data->line_len + x * (data->bpp / 8));
+	*(unsigned int *)dst = color;
 }

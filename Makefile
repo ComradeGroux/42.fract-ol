@@ -6,7 +6,7 @@
 #    By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:49:40 by vgroux            #+#    #+#              #
-#    Updated: 2022/11/03 17:31:03 by vgroux           ###   ########.fr        #
+#    Updated: 2022/11/04 16:19:02 by vgroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,10 @@ DIR_H = headers/
 DIR_S =	srcs/
 DIR_O =	objs/
 
-SRCS_LIST =	fractol.c \
+SRCS_LIST =	main.c \
+			mandelbrot.c \
+			utils.c \
 			error.c \
-			window.c \
-			images.c \
 			hook.c \
 			color.c \
 
