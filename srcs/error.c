@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol_error.c                                    :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:43:08 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/03 00:04:06 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/04 14:53:18 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-#include "error.h"
 
-int	ft_error_arg(char *error)
+void	ft_error_arg(int errcode)
 {
-	ft_printf("%s", error);
-	return (1);
+	if (errcode == ID_ERROR_WRONG_FRACTAL_NAME)
+		ft_printf("%s", ERROR_WRONG_FRACTAL_NAME);
+	else if (errcode == ID_ERROR_FLOAT)
+		ft_printf("%s", ERROR_FLOAT);
+	else if (errcode == ID_ERROR_NBR_ARG)
+		ft_printf("%s", ERROR_NBR_ARG);
+	ft_printf("%s", ERROR_EXEMPLE);
 }
 
 int	ft_check_arg(int argc, char **argv)
