@@ -6,7 +6,7 @@
 #    By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:49:40 by vgroux            #+#    #+#              #
-#    Updated: 2022/11/03 17:31:03 by vgroux           ###   ########.fr        #
+#    Updated: 2022/11/08 17:59:27 by vgroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ SRCS_LIST =	fractol.c \
 			window.c \
 			images.c \
 			hook.c \
-			color.c \
+			color.c
 
 SRCS =		${addprefix ${DIR_S}, ${SRCS_LIST}}
 
@@ -62,22 +62,22 @@ ${NAME}: ${LIBFT} ${MLX} ${OBJS}
 	@echo "$(GREENGREEN) ██╔══╝  ██╔══██╗██╔══██║██║        ██║╚════╝██║   ██║██║$(RESET)"
 	@echo "$(GREENGREEN) ██║     ██║  ██║██║  ██║╚██████╗   ██║      ╚██████╔╝███████╗$(RESET)"
 	@echo "$(GREENGREEN) ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝       ╚═════╝ ╚══════╝$(RESET)"
-	${CC} ${LIBS} ${OBJS} -o ${NAME}
+	${CC} ${OBJS} ${LIBS} -o ${NAME}
 
 ${LIBFT}:
-	@echo "[$(GREENGREEN)Fract-ol$(RESET)]: Creating Libft...${GREY}"
+	@echo "[$(GREENGREEN)${NAME}$(RESET)]: Creating Libft...${GREY}"
 	${MAKE} -sC ${@D}
-	@echo "$(RESET)[$(GREENGREEN)Fract-ol$(RESET)]: Libft Objects were created\n"
+	@echo "$(RESET)[$(GREENGREEN)${NAME}$(RESET)]: Libft Objects were created\n"
 
 ${MLX}:
-	@echo "[$(GREENGREEN)Fract-ol$(RESET)]: Creating MiniLibX...$(GREY)"
+	@echo "[$(GREENGREEN)${NAME}$(RESET)]: Creating MiniLibX...$(GREY)"
 	${MAKE} -sC ${@D}
-	@echo "$(RESET)[$(GREENGREEN)Fract-ol$(RESET)]: MLX Objects were created\n"
+	@echo "$(RESET)[$(GREENGREEN)${NAME}$(RESET)]: MLX Objects were created\n"
 
 all: ${NAME}
 
 ${DIR_O}%.o:${DIR_S}%.c
-	${CC} ${CFLAGS} -I ${DIR_H} ${LIBFT_INC} ${MLX_INC} -o $@ -c $<
+	${CC} ${CFLAGS} ${LIBFT_INC} ${MLX_INC} -I ${DIR_H} -o $@ -c $<
 
 clean:
 	@echo "$(RED) ██████╗██╗     ███████╗ █████╗ ███╗   ██╗██╗███╗   ██╗ ██████╗$(RESET)"
