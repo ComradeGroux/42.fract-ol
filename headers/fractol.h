@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 19:19:14 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/04 17:46:38 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/23 13:47:02 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include "mlx.h"
 # include <math.h>
 
-# define MAX_I 42
+# define MAX_I 50
 
 # define WIDTH 1920
 # define HEIGHT 1080
