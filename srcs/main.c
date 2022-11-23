@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:37:23 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/23 14:59:59 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/23 18:43:39 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,13 @@ void	mlx_start(t_data *data)
 	data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
 	data->addr = mlx_get_data_addr(data->img, &data->bpp,
 			&data->line_len, &data->endian);
-    data->x_max = 2.0;
+	data->x_max = 2.0;
 	data->x_min = -2.0;
-	data->y_max = (data->x_max - data->x_min) * HEIGHT / WIDTH;
 	data->y_min = -2.0;
+	data->y_max = data->y_min + (data->x_max - data->x_min) * HEIGHT / WIDTH;
+	data->y_off = 0;
+	data->x_off = 0;
+	data->zoom = 260;
 }
 
 void	fractal_render(t_data *data)

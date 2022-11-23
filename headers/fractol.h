@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 19:19:14 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/23 13:47:02 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/23 18:42:31 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@
 # include "mlx.h"
 # include <math.h>
 
-# define MAX_I 50
+# define MAX_I 42
 
-# define WIDTH 1920
-# define HEIGHT 1080
+# define WIDTH 1000
+# define HEIGHT 1000
 
 typedef struct s_data
 {
@@ -38,11 +38,13 @@ typedef struct s_data
 	int		x;
 	int		y;
 	int		iter;
+	double	x_off;
+	double	y_off;
+	double	zoom;
 	double	zr;
 	double	zi;
 	double	cr;
 	double	ci;
-	double	tmp;
 	double	x_max;
 	double	x_min;
 	double	y_max;
@@ -55,5 +57,7 @@ void	fractal_render(t_data *data);
 void	mandelbrot(t_data *data);
 void	mandel_calc(t_data *data, int x, int y);
 void	put_pixel(t_data *data, int x, int y, int color);
+void    update_f(t_data *data, double zoom);
+int		key_hook(int keycode, t_data *data);
 
 #endif
