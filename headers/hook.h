@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 14:28:12 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/24 14:58:06 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/24 18:54:39 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,7 @@
 # define ARROW_DOWN 125
 # define ARROW_LEFT 123
 # define ARROW_RIGHT 124
+# define MINUS 27
+# define PLUS 24
 
 #endif

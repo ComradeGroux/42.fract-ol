@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:37:23 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/24 15:51:14 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/24 19:14:58 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(int argc, char **argv)
 		fractal_render(&data);
 		mlx_key_hook(data.win, key_hook, &data);
 		mlx_mouse_hook(data.win, &mouse_hook, &data);
+		mlx_hook(data.win, 17, 0, &fractol_exit, &data);
 		mlx_loop(data.mlx);
 	}
 	else
@@ -45,7 +46,6 @@ void	mlx_start(t_data *data)
 	data->y_max = data->y_min + (data->x_max - data->x_min) * HEIGHT / WIDTH;
 	data->y_off = 0;
 	data->x_off = 0;
-	data->zoom = 260;
 }
 
 void	fractal_render(t_data *data)
@@ -54,4 +54,15 @@ void	fractal_render(t_data *data)
 		mandelbrot(data);
 	else if (data->type == FRACTAL_TYPE_JULIA)
 		julia(data);
+	else if (data->type == -1)
+		exit (1);
+}
+
+int	choose_fractal(char *name)
+{
+	if (!ft_strncmp(name, "mandelbrot", ft_strlen(name)))
+		return (FRACTAL_TYPE_MANDELBROT);
+	else if (!ft_strncmp(name, "julia", ft_strlen(name)))
+		return (FRACTAL_TYPE_JULIA);
+	return (-1);
 }

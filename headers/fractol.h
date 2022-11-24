@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 19:19:14 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/24 15:51:26 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/24 19:15:16 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,7 @@ void	ft_error_arg(int errcode);
 int		ft_check_arg(t_data *data, int argc, char **argv);
 void	julia_calc(t_data *data, int x, int y);
 void	julia(t_data *data);
+int		choose_fractal(char *name);
+int		fractol_exit(t_data *data);
 
 #endif

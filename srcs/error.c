@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:43:08 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/24 16:21:17 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/24 19:18:20 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,27 @@ int	ft_check_arg(t_data *data, int argc, char **argv)
 	fractal_name = ft_strtocase(argv[1], ft_tolower);
 	if (argc == 2)
 	{
-		if (!ft_strncmp(fractal_name, "mandelbrot", ft_strlen(fractal_name)))
+		if (ft_strncmp(fractal_name, "mandelbrot", ft_strlen(fractal_name)))
 			return (ID_ERROR_WRONG_FRACTAL_NAME);
-		if (ft_strncmp(fractal_name, "julia", ft_strlen(fractal_name)))
+		if (!ft_strncmp(fractal_name, "julia", ft_strlen(fractal_name)))
 			return (ID_ERROR_NBR_ARG);
 	}
 	else if (argc == 4)
 	{
-		if (ft_strncmp(fractal_name, "mandelbrot", ft_strlen(fractal_name)))
+		if (!ft_strncmp(fractal_name, "mandelbrot", ft_strlen(fractal_name)))
 			return (ID_ERROR_WRONG_FRACTAL_NAME);
+		else if (!ft_strncmp(fractal_name, "julia", ft_strlen(fractal_name)))
+		{
+			data->jr = ft_atod(argv[2]);
+			data->ji = ft_atod(argv[3]);
+		}
 	}
 	return (0);
+}
+
+int	fractol_exit(t_data *data)
+{
+	mlx_destroy_image(data->mlx, data->img);
+	mlx_destroy_window(data->mlx, data->win);
+	exit(0);
 }

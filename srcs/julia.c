@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:47:59 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/24 16:20:45 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/24 19:05:52 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,16 @@ void	julia_calc(t_data *data, int x, int y)
 	int		color;
 
 	data->iter = 0;
-	zr = data->jr;
-	zi = data->ji;
+	zr = data->cr;
+	zi = data->ci;
 	while (data->iter < MAX_I)
 	{
 		zr2 = zr * zr;
 		zi2 = zi * zi;
 		if (zr2 + zi2 > 4)
 			break ;
-		zi = 2 * zr * zi + data->ci;
-		zr = zr2 - zi2 + data->cr;
+		zi = 2 * zr * zi + data->ji;
+		zr = zr2 - zi2 + data->jr;
 		data->iter += 1;
 	}
 	if (data->iter == MAX_I)

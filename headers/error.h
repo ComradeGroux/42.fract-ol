@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:00:22 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/24 15:45:18 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/24 16:54:29 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@
 
 # define ERROR_EXEMPLE "Exemple d'utilisation:\n \
 	Fractal de Mandelbrot:		./fractol mandelbrot\n \
-	Fractal de Julia:			./fractal julia 0.28 0.01\n\n"
+	Fractal de Julia:		./fractal julia 0.28 0.01\n\n"
 
 #endif
