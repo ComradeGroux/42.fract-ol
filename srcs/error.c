@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:43:08 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/24 15:52:01 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/24 16:21:17 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int	ft_check_arg(t_data *data, int argc, char **argv)
 	}
 	else if (argc == 4)
 	{
-
 		if (ft_strncmp(fractal_name, "mandelbrot", ft_strlen(fractal_name)))
 			return (ID_ERROR_WRONG_FRACTAL_NAME);
 	}
