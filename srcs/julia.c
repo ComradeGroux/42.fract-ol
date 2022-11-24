@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandelbrot.c                                       :+:      :+:    :+:   */
+/*   julia.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 15:26:19 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/24 15:47:39 by vgroux           ###   ########.fr       */
+/*   Created: 2022/11/24 15:47:59 by vgroux            #+#    #+#             */
+/*   Updated: 2022/11/24 15:49:02 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	mandelbrot(t_data *data)
+void	julia(t_data *data)
 {
 	int	x;
 	int	y;
@@ -27,14 +27,14 @@ void	mandelbrot(t_data *data)
 		{
 			data->cr = (data->x_min + ((x + data->x_off)
 						* ((data->x_max - data->x_min) / (HEIGHT - 1))));
-			mandel_calc(data, x, y);
+			julia_calc(data, x, y);
 		}
 		x = 0;
 	}
 	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
 }
 
-void	mandel_calc(t_data *data, int x, int y)
+void	julia_calc(t_data *data, int x, int y)
 {
 	double	zr;
 	double	zi;
@@ -43,8 +43,8 @@ void	mandel_calc(t_data *data, int x, int y)
 	int		color;
 
 	data->iter = 0;
-	zr = data->cr;
-	zi = data->ci;
+	zr = data->jr;
+	zi = data->ji;
 	while (data->iter < MAX_I)
 	{
 		zr2 = zr * zr;

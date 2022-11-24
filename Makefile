@@ -6,10 +6,10 @@
 #    By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:49:40 by vgroux            #+#    #+#              #
-#    Updated: 2022/11/15 19:06:51 by vgroux           ###   ########.fr        #
-#    Updated: 2022/11/04 16:19:02 by vgroux           ###   ########.fr        #
+#    Updated: 2022/11/24 15:52:58 by vgroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 GREENGREEN = \033[38;5;46m
 RED = \033[0;31m
@@ -31,7 +31,7 @@ SRCS_LIST =	main.c \
 			utils.c \
 			error.c \
 			hook.c \
-			color.c
+			julia.c
 
 SRCS =		${addprefix ${DIR_S}, ${SRCS_LIST}}
 

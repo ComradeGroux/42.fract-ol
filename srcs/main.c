@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:37:23 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/23 18:43:39 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/24 15:51:14 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,20 @@
 int	main(int argc, char **argv)
 {
 	t_data	data;
-	/*int		err;
+	int		err;
 
-	err = ft_check_arg(argc, argv);
+	err = ft_check_arg(&data, argc, argv);
 	if (err == 0)
-	{*/
-	(void)argc;
-	(void)argv;
-	data.type = 1;
-	mlx_start(&data);
-	fractal_render(&data);
-	mlx_key_hook(data.win, key_hook, &data);
-	mlx_loop(data.mlx);
-	/*
+	{
+		data.type = choose_fractal(ft_strtocase(argv[1], ft_tolower));
+		mlx_start(&data);
+		fractal_render(&data);
+		mlx_key_hook(data.win, key_hook, &data);
+		mlx_mouse_hook(data.win, &mouse_hook, &data);
+		mlx_loop(data.mlx);
+	}
 	else
-		ft_error_arg(err);*/
+		ft_error_arg(err);
 	return (0);
 }
 
@@ -51,7 +50,8 @@ void	mlx_start(t_data *data)
 
 void	fractal_render(t_data *data)
 {
-	mandelbrot(data);/*
-	else if (data.type == 2)
-		julia(data);*/
+	if (data->type == FRACTAL_TYPE_MANDELBROT)
+		mandelbrot(data);
+	else if (data->type == FRACTAL_TYPE_JULIA)
+		julia(data);
 }

@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 19:19:14 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/23 18:42:31 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/24 15:51:26 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 # include <math.h>
 
 # define MAX_I 42
-
+# define FRACTAL_TYPE_MANDELBROT 1
+# define FRACTAL_TYPE_JULIA 2
 # define WIDTH 1000
 # define HEIGHT 1000
 
@@ -40,7 +41,8 @@ typedef struct s_data
 	int		iter;
 	double	x_off;
 	double	y_off;
-	double	zoom;
+	double	jr;
+	double	ji;
 	double	zr;
 	double	zi;
 	double	cr;
@@ -57,7 +59,13 @@ void	fractal_render(t_data *data);
 void	mandelbrot(t_data *data);
 void	mandel_calc(t_data *data, int x, int y);
 void	put_pixel(t_data *data, int x, int y, int color);
-void    update_f(t_data *data, double zoom);
+void	update_f(t_data *data, double zoom);
+void	move_f(t_data *data, int x, int y);
 int		key_hook(int keycode, t_data *data);
+int		mouse_hook(int mousecode, int x, int y, t_data *data);
+void	ft_error_arg(int errcode);
+int		ft_check_arg(t_data *data, int argc, char **argv);
+void	julia_calc(t_data *data, int x, int y);
+void	julia(t_data *data);
 
 #endif
