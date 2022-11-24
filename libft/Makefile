@@ -6,7 +6,7 @@
 #    By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/30 14:09:53 by vgroux            #+#    #+#              #
-#    Updated: 2022/11/24 16:03:58 by vgroux           ###   ########.fr        #
+#    Updated: 2022/11/24 16:21:49 by vgroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS =		ft_atold.c \
 			get_next_line_utils_bonus.c \
 			ft_printf_ptr.c ft_printf.c \
 			ft_printf_utils.c \
-			ft_ulltoa.c \
+			ft_ulltoa_base.c \
 			ft_lstmap_bonus.c \
 			ft_lstiter_bonus.c \
 			ft_lstclear_bonus.c \

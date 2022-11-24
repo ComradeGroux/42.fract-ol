@@ -6,11 +6,11 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:55:26 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/24 16:14:50 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/24 16:21:32 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "libft.h"
 
 long double	ft_atold(char *str)
 {

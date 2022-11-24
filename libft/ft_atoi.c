@@ -6,19 +6,11 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 12:53:14 by vgroux            #+#    #+#             */
-/*   Updated: 2022/10/14 18:54:21 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/24 16:22:02 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_isspace(int c)
-{
-	if ((c >= 9 && c <= 13) || (char)c == ' ')
-		return (1);
-	else
-		return (0);
-}
 
 int	ft_atoi(const char *str)
 {
