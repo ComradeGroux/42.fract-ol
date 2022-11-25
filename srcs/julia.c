@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:47:59 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/24 19:05:52 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/25 15:01:17 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,6 @@ void	julia_calc(t_data *data, int x, int y)
 	if (data->iter == MAX_I)
 		color = 0xFFFFFF;
 	else
-		color = (data->iter * (double)1024 / MAX_I);
+		color = (MAX_I * (double)1024 / data->iter);
 	put_pixel(data, x, y, color);
 }
