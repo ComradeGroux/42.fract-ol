@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:00:22 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/24 16:54:29 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/25 13:39:46 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 # define ID_ERROR_FLOAT 3
 # define ERROR_FLOAT "Vous devez entrer un nombre a virgule pour generer \
-	un ensemble de Julia\n"
+un ensemble de Julia\n"
 
 # define ERROR_EXEMPLE "Exemple d'utilisation:\n \
 	Fractal de Mandelbrot:		./fractol mandelbrot\n \
