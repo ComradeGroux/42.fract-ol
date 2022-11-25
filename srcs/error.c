@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:43:08 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/25 15:57:48 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/25 16:29:39 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,12 @@ void	ft_error_arg(int errcode)
 	ft_printf("%s", ERROR_EXEMPLE);
 }
 
-int	ft_scandale(t_data *data, char *d1, char *d2)
+void	ft_scandale(t_data *data, char *d1, char *d2)
 {
 	data->jr = ft_atod(d1);
+	data->ar = ft_atod(d1);
 	data->ji = ft_atod(d2);
+	data->ai = ft_atod(d2);
 }
 
 int	ft_check_arg(t_data *data, int argc, char **argv)

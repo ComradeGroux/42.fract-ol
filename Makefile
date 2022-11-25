@@ -6,7 +6,7 @@
 #    By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:49:40 by vgroux            #+#    #+#              #
-#    Updated: 2022/11/24 15:52:58 by vgroux           ###   ########.fr        #
+#    Updated: 2022/11/25 16:04:29 by vgroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,12 +26,14 @@ DIR_H = headers/
 DIR_S =	srcs/
 DIR_O =	objs/
 
-SRCS_LIST =	main.c \
-			mandelbrot.c \
-			utils.c \
-			error.c \
+SRCS_LIST =	error.c \
 			hook.c \
-			julia.c
+			julia.c \
+			keyhook.c \
+			main.c \
+			mandelbrot.c \
+			mousehook.c \
+			utils.c \
 
 SRCS =		${addprefix ${DIR_S}, ${SRCS_LIST}}
 

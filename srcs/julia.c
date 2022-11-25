@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:47:59 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/25 15:41:39 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/25 17:25:29 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void	julia_calc(t_data *data, int x, int y)
 		data->iter += 1;
 	}
 	if (data->iter == MAX_I)
-		color = 0xFFFFFF;
+		color = 0xFF00FF;
 	else
-		color = color_multi(data->iter);
+		color = color_multi((double)data->iter + 2 - log2(log2(sqrt(zr * zr + zi * zi)) / M_LN2));
 	put_pixel(data, x, y, color);
 }

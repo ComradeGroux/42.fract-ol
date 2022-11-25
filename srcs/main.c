@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:37:23 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/24 19:14:58 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/25 17:15:25 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	mlx_start(t_data *data)
 	data->addr = mlx_get_data_addr(data->img, &data->bpp,
 			&data->line_len, &data->endian);
 	data->x_max = 2.0;
-	data->x_min = -2.0;
+	data->x_min = -2.0 * ((double)WIDTH / (double)HEIGHT);
 	data->y_min = -2.0;
 	data->y_max = data->y_min + (data->x_max - data->x_min) * HEIGHT / WIDTH;
 	data->y_off = 0;
