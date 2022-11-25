@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 15:26:19 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/25 15:02:35 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/25 15:37:20 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void	mandel_calc(t_data *data, int x, int y)
 		data->iter += 1;
 	}
 	if (data->iter == MAX_I)
-		color = 0xFFFFFF;
+		color = 0x000000;
 	else
-		color = (data->iter * (double)1024 / MAX_I);
+		color = color_multi(data->iter);
 	put_pixel(data, x, y, color);
 }

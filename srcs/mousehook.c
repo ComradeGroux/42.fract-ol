@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hook.h                                             :+:      :+:    :+:   */
+/*   mousehook.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 14:28:12 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/25 15:50:54 by vgroux           ###   ########.fr       */
+/*   Created: 2022/11/25 15:52:41 by vgroux            #+#    #+#             */
+/*   Updated: 2022/11/25 15:52:53 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HOOK_H
-# define HOOK_H
+#include "fractol.h"
 
-# define ESC 53
-# define ZOOM_IN 5
-# define ZOOM_OUT 4
-# define ARROW_UP 126
-# define ARROW_DOWN 125
-# define ARROW_LEFT 123
-# define ARROW_RIGHT 124
-# define MINUS 27
-# define PLUS 24
-# define RESET 15
-
-#endif
+int	mouse_hook(int mousecode, int x, int y, t_data *data)
+{
+	(void)x;
+	(void)y;
+	if (mousecode == ZOOM_IN)
+		update_f(data, 0.90);
+	if (mousecode == ZOOM_OUT)
+		update_f(data, 1.10);
+	fractal_render(data);
+	return (0);
+}

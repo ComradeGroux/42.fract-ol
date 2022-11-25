@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:43:08 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/25 13:39:19 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/25 15:57:48 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ void	ft_error_arg(int errcode)
 	else if (errcode == ID_ERROR_NBR_ARG)
 		ft_printf("%s", ERROR_NBR_ARG);
 	ft_printf("%s", ERROR_EXEMPLE);
+}
+
+int	ft_scandale(t_data *data, char *d1, char *d2)
+{
+	data->jr = ft_atod(d1);
+	data->ji = ft_atod(d2);
 }
 
 int	ft_check_arg(t_data *data, int argc, char **argv)
@@ -44,10 +50,7 @@ int	ft_check_arg(t_data *data, int argc, char **argv)
 		else if (!ft_strncmp(fractal_name, "julia", ft_strlen(fractal_name)))
 		{
 			if (check_double(argv[2]) != -1 && check_double(argv[3]) != -1)
-			{
-				data->jr = ft_atod(argv[2]);
-				data->ji = ft_atod(argv[3]);
-			}
+				ft_scandale(data, argv[2], argv[3]);
 			else
 				return (ID_ERROR_FLOAT);
 		}

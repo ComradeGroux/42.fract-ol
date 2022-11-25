@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 13:54:23 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/25 13:54:48 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/25 15:54:11 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,10 @@ void	julia(t_data *data);
 int		choose_fractal(char *name);
 int		fractol_exit(t_data *data);
 int		check_double(char *str);
+int		color_multi(int iter);
+void	update_f(t_data *data, double zoom);
+void	move_f(t_data *data, int x, int y);
+void	change_input(t_data *data, double up);
+void	reset(t_data *data);
 
 #endif
