@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 13:54:23 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/25 17:06:01 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/28 16:55:31 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct s_data
 
 int		main(int argc, char **argv);
 void	mlx_start(t_data *data);
-void	fractal_render(t_data *data);
+int		fractal_render(t_data *data);
 void	mandelbrot(t_data *data);
 void	mandel_calc(t_data *data, int x, int y);
 void	put_pixel(t_data *data, int x, int y, int color);
@@ -62,5 +62,7 @@ void	update_f(t_data *data, double zoom);
 void	move_f(t_data *data, int x, int y);
 void	change_input(t_data *data, double up);
 void	reset(t_data *data);
+int		encode_rgb(double r, double g, double b);
+int		choose_color(int iter, double zr2, double zi2);
 
 #endif

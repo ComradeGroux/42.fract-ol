@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 19:19:14 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/25 16:37:27 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/28 17:00:41 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include "mlx.h"
 # include <math.h>
 
+# define COLOR_MAX_I 0x000000
 # define MAX_I 42
 # define FRACTAL_TYPE_MANDELBROT 1
 # define FRACTAL_TYPE_JULIA 2
