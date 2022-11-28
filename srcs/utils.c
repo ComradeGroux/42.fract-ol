@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 16:10:38 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/28 17:15:35 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/28 17:37:51 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	choose_color(int iter, double zr2, double zi2)
 	double	t;
 
 	t = ((double)iter + 2 - log(log(zr2 + zi2)) / M_LN2) / 10;
-	t /= 5;
+	t /= 3.33;
 	return (encode_rgb(t, 0, t));
 }
 

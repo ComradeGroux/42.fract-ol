@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 15:53:11 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/25 17:52:04 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/28 17:35:52 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,6 @@ void	change_input(t_data *data, double up)
 
 void	reset(t_data *data)
 {
-	mlx_destroy_image(data->mlx, data->img);
-	data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
-	data->addr = mlx_get_data_addr(data->img, &data->bpp,
-			&data->line_len, &data->endian);
 	data->x_max = 2.0;
 	data->x_min = -2.0;
 	data->y_min = -2.0;
