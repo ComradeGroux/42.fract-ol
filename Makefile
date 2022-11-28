@@ -6,7 +6,7 @@
 #    By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:49:40 by vgroux            #+#    #+#              #
-#    Updated: 2022/11/25 16:04:29 by vgroux           ###   ########.fr        #
+#    Updated: 2022/11/28 19:07:12 by vgroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRCS_LIST =	error.c \
 			mandelbrot.c \
 			mousehook.c \
 			utils.c \
+			burningship.c
 
 SRCS =		${addprefix ${DIR_S}, ${SRCS_LIST}}
 

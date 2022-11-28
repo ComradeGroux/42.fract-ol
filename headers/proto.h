@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 13:54:23 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/28 16:55:31 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/28 19:08:16 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,7 @@ void	change_input(t_data *data, double up);
 void	reset(t_data *data);
 int		encode_rgb(double r, double g, double b);
 int		choose_color(int iter, double zr2, double zi2);
+void	burningship(t_data *data);
+void	burning_calc(t_data *data, int x, int y);
 
 #endif

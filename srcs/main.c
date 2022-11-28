@@ -6,12 +6,12 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:37:23 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/28 15:13:07 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/28 19:26:13 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
+#include <stdio.h>
 int	main(int argc, char **argv)
 {
 	t_data	data;
@@ -22,11 +22,10 @@ int	main(int argc, char **argv)
 	{
 		data.type = choose_fractal(ft_strtocase(argv[1], ft_tolower));
 		mlx_start(&data);
-//		fractal_render(&data);
+		fractal_render(&data);
 		mlx_key_hook(data.win, key_hook, &data);
 		mlx_mouse_hook(data.win, &mouse_hook, &data);
 		mlx_hook(data.win, 17, 0, &fractol_exit, &data);
-		mlx_loop_hook(data.mlx, &fractal_render, &data);
 		mlx_loop(data.mlx);
 	}
 	else
@@ -55,6 +54,8 @@ int	fractal_render(t_data *data)
 		mandelbrot(data);
 	else if (data->type == FRACTAL_TYPE_JULIA)
 		julia(data);
+	else if (data->type == FRACTAL_TYPE_BURNING)
+		burningship(data);
 	else if (data->type == -1)
 		exit (1);
 	return (0);
@@ -66,5 +67,7 @@ int	choose_fractal(char *name)
 		return (FRACTAL_TYPE_MANDELBROT);
 	else if (!ft_strncmp(name, "julia", ft_strlen(name)))
 		return (FRACTAL_TYPE_JULIA);
+	else if (!ft_strncmp(name, "burningship", ft_strlen(name)))
+		return (FRACTAL_TYPE_BURNING);
 	return (-1);
 }

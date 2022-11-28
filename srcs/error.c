@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:43:08 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/25 16:29:39 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/28 19:12:35 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ int	ft_check_arg(t_data *data, int argc, char **argv)
 	fractal_name = ft_strtocase(argv[1], ft_tolower);
 	if (argc == 2)
 	{
-		if (ft_strncmp(fractal_name, "mandelbrot", ft_strlen(fractal_name)))
+		if (ft_strncmp(fractal_name, "mandelbrot", ft_strlen(fractal_name))
+			&& ft_strncmp(fractal_name, "burningship", ft_strlen(fractal_name)))
 			return (ID_ERROR_WRONG_FRACTAL_NAME);
 		if (!ft_strncmp(fractal_name, "julia", ft_strlen(fractal_name)))
 			return (ID_ERROR_NBR_ARG);

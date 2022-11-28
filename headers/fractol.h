@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 19:19:14 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/28 17:31:45 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/28 19:34:55 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # define MAX_I 42
 # define FRACTAL_TYPE_MANDELBROT 1
 # define FRACTAL_TYPE_JULIA 2
-# define FRACTAL_TYPE_
+# define FRACTAL_TYPE_BURNING 3
 # define WIDTH 1000
 # define HEIGHT 1000
 
