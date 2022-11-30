@@ -6,7 +6,7 @@
 #    By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:49:40 by vgroux            #+#    #+#              #
-#    Updated: 2022/11/28 19:07:12 by vgroux           ###   ########.fr        #
+#    Updated: 2022/11/30 15:02:25 by vgroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ RM =         rm -f
 
 DIR_H = headers/
 DIR_S =	srcs/
+CREATE_DIR_O = @mkdir objs
 DIR_O =	objs/
 
 SRCS_LIST =	error.c \
@@ -59,14 +60,21 @@ MLX =	${DIR_MLX}libmlx.a
 
 LIBS = ${FT_LNK} ${MLX_LNK}
 
-${NAME}: ${LIBFT} ${MLX} ${OBJS}
+${NAME}: title ${LIBFT} ${MLX} createobjs ${OBJS}
+	${CC} ${OBJS} ${LIBS} -o ${NAME}
+	@echo "$(RESET)[$(GREENGREEN)${NAME}$(RESET)]: Fractol created !${GREY}"
+
+title:
 	@echo "$(GREENGREEN) ██████╗██████╗  █████╗  ██████╗████████╗    ██████╗ ██╗$(RESET)"
 	@echo "$(GREENGREEN) ██╔════╝██╔══██╗██╔══██╗██╔════╝╚══██╔══╝   ██╔═══██╗██║$(RESET)"
 	@echo "$(GREENGREEN) █████╗  ██████╔╝███████║██║        ██║█████╗██║   ██║██║$(RESET)"
 	@echo "$(GREENGREEN) ██╔══╝  ██╔══██╗██╔══██║██║        ██║╚════╝██║   ██║██║$(RESET)"
 	@echo "$(GREENGREEN) ██║     ██║  ██║██║  ██║╚██████╗   ██║      ╚██████╔╝███████╗$(RESET)"
 	@echo "$(GREENGREEN) ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝       ╚═════╝ ╚══════╝$(RESET)"
-	${CC} ${OBJS} ${LIBS} -o ${NAME}
+	
+createobjs:
+	@echo "[$(GREENGREEN)${NAME}$(RESET)]: Creating Fractol Objects...${GREY}"
+	@mkdir -p ${DIR_O}
 
 ${LIBFT}:
 	@echo "[$(GREENGREEN)${NAME}$(RESET)]: Creating Libft...${GREY}"
