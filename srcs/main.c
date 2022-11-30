@@ -6,12 +6,13 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:37:23 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/30 14:32:48 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/30 16:42:35 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 #include <stdio.h>
+
 int	main(int argc, char **argv)
 {
 	t_data	data;

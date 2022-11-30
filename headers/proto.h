@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 13:54:23 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/30 14:52:28 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/30 16:49:32 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,6 @@ int		choose_color(int iter, double zr2, double zi2, t_data *data);
 void	burningship(t_data *data);
 void	burning_calc(t_data *data, int x, int y);
 void	param_color(t_data *data, int keycode);
+int		ft_scandale(t_data *data, char **argv, char *fractal_name);
 
 #endif

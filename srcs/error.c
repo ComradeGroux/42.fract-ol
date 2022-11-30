@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:43:08 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/28 19:12:35 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/30 16:49:25 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,23 @@ void	ft_error_arg(int errcode)
 	ft_printf("%s", ERROR_EXEMPLE);
 }
 
-void	ft_scandale(t_data *data, char *d1, char *d2)
+int	ft_scandale(t_data *data, char **argv, char *fractal_name)
 {
-	data->jr = ft_atod(d1);
-	data->ar = ft_atod(d1);
-	data->ji = ft_atod(d2);
-	data->ai = ft_atod(d2);
+	if (!ft_strncmp(fractal_name, "mandelbrot", ft_strlen(fractal_name)))
+		return (ID_ERROR_WRONG_FRACTAL_NAME);
+	else if (!ft_strncmp(fractal_name, "julia", ft_strlen(fractal_name)))
+	{
+		if (check_double(argv[2]) != -1 && check_double(argv[3]) != -1)
+		{
+			data->jr = ft_atod(argv[2]);
+			data->ar = ft_atod(argv[2]);
+			data->ji = ft_atod(argv[3]);
+			data->ai = ft_atod(argv[3]);
+		}
+		else
+			return (ID_ERROR_FLOAT);
+	}
+	return (0);
 }
 
 int	ft_check_arg(t_data *data, int argc, char **argv)
@@ -47,17 +58,7 @@ int	ft_check_arg(t_data *data, int argc, char **argv)
 			return (ID_ERROR_NBR_ARG);
 	}
 	else if (argc == 4)
-	{
-		if (!ft_strncmp(fractal_name, "mandelbrot", ft_strlen(fractal_name)))
-			return (ID_ERROR_WRONG_FRACTAL_NAME);
-		else if (!ft_strncmp(fractal_name, "julia", ft_strlen(fractal_name)))
-		{
-			if (check_double(argv[2]) != -1 && check_double(argv[3]) != -1)
-				ft_scandale(data, argv[2], argv[3]);
-			else
-				return (ID_ERROR_FLOAT);
-		}
-	}
+		return (ft_scandale(data, argv, fractal_name));
 	return (0);
 }
 
