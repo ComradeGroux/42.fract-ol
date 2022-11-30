@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:37:23 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/28 19:26:13 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/30 14:32:48 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,9 @@ void	mlx_start(t_data *data)
 	data->y_max = data->y_min + (data->x_max - data->x_min) * HEIGHT / WIDTH;
 	data->y_off = 0;
 	data->x_off = 0;
+	data->color_r = 1;
+	data->color_g = 0;
+	data->color_b = 1;
 }
 
 int	fractal_render(t_data *data)

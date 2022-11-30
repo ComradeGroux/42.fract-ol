@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 16:10:38 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/28 17:42:04 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/30 14:50:51 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,25 @@ void	put_pixel(t_data *data, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-int	choose_color(int iter, double zr2, double zi2)
+int	choose_color(int iter, double zr2, double zi2, t_data *data)
 {
-	double	t;
+	double	ratio;
 
-	t = ((double)iter + 2 - log(log(zr2 + zi2)) / M_LN2) / 10;
-	t /= 3.33;
-	return (encode_rgb(t, 0, t));
+	ratio = ((double)iter + 2 - log(log(zr2 + zi2)) / M_LN2) / 10;
+	ratio /= 3.33;
+	return (encode_rgb(data, ratio));
 }
 
-int	encode_rgb(double r, double g, double b)
+int	encode_rgb(t_data *data, double ratio)
 {
-	return (((int)(r * 255) << 16) + ((int)(g * 255) << 8) + (int)(b * 255));
+	int	color;
+
+	color = 0;
+	if (data->color_r != 0)
+		color += (int)(ratio * 255) << 16;
+	if (data->color_g != 0)
+		color += (int)(ratio * 255) << 8;
+	if (data->color_b != 0)
+		color += (int)(ratio * 255);
+	return (color);
 }

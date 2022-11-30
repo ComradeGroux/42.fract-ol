@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 14:27:34 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/28 15:48:14 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/30 14:44:13 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ int	key_hook(int keycode, t_data *data)
 		change_input(data, 0.001);
 	if (keycode == MINUS)
 		change_input(data, -0.001);
+	if (keycode == RED || keycode == GREEN || keycode == BLUE
+		|| keycode == YELLOW || keycode == CYAN || keycode == PURPLE)
+		param_color(data, keycode);
 	if (keycode == RESET)
 		reset(data);
 	fractal_render(data);

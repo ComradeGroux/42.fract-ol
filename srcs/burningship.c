@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 19:06:41 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/30 12:50:49 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/30 14:25:33 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,6 @@ void	burning_calc(t_data *data, int x, int y)
 	if (data->iter == MAX_I)
 		color = COLOR_MAX_I;
 	else
-		color = choose_color(data->iter, zr2, zi2);
+		color = choose_color(data->iter, zr2, zi2, data);
 	put_pixel(data, x, y, color);
 }

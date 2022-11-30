@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 15:53:11 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/28 17:35:52 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/30 14:52:19 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,17 @@ void	reset(t_data *data)
 	data->y_off = 0;
 	data->jr = data->ar;
 	data->ji = data->ai;
+}
+
+void	param_color(t_data *data, int keycode)
+{
+	data->color_r = 0;
+	data->color_g = 0;
+	data->color_b = 0;
+	if (keycode == RED || keycode == PURPLE || keycode == YELLOW)
+		data->color_r = 1;
+	if (keycode == GREEN || keycode == CYAN || keycode == YELLOW)
+		data->color_g = 1;
+	if (keycode == BLUE || keycode == PURPLE || keycode == CYAN)
+		data->color_b = 1;
 }
