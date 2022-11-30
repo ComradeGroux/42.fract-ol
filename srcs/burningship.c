@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 19:06:41 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/29 17:19:34 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/11/30 12:50:49 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	burningship(t_data *data)
 	y = 0;
 	while (++y < HEIGHT)
 	{
-		data->ci = (data->y_max - ((y + data->y_off)
+		data->ci = -(data->y_max - ((y + data->y_off)
 					* ((data->y_max - data->y_min) / (WIDTH - 1))));
 		while (++x < WIDTH)
 		{
