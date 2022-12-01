@@ -6,7 +6,7 @@
 #    By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:49:40 by vgroux            #+#    #+#              #
-#    Updated: 2022/11/30 15:02:25 by vgroux           ###   ########.fr        #
+#    Updated: 2022/12/01 16:27:09 by vgroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NAME =     fractol
 
 CC =         gcc
 CFLAGS =     -Wall -Wextra -Werror -O3
-RM =         rm -f
+RM =         rm -rf
 
 DIR_H = headers/
 DIR_S =	srcs/
@@ -99,6 +99,7 @@ clean:
 	@echo "$(RED) ╚██████╗███████╗███████╗██║  ██║██║ ╚████║██║██║ ╚████║╚██████╔╝$(RESET)"
 	@echo "$(RED)  ╚═════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═══╝ ╚═════╝ $(RESET)"
 	${RM} ${OBJS}
+	${RM} ${DIR_O}
 
 libclean:
 	@echo "Clean de MiniLibX"
