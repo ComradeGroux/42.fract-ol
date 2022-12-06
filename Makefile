@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+         #
+#    By: vgroux <vgroux@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:49:40 by vgroux            #+#    #+#              #
-#    Updated: 2022/12/01 16:27:09 by vgroux           ###   ########.fr        #
+#    Updated: 2022/12/06 01:25:15 by vgroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ RESET = \033[0m
 NAME =     fractol
 
 CC =         gcc
-CFLAGS =     -Wall -Wextra -Werror -O3
+CFLAGS =     -Wall -Wextra -Werror
 RM =         rm -rf
 
 DIR_H = headers/
@@ -50,7 +50,7 @@ FT_LNK = -L ${DIR_LIBFT} -l ft
 # Compile la MiniLibX suivant l'OS
 ifeq (${shell uname}, Linux)
 	DIR_MLX = mlx_linux/
-	MLX_LNK	= -L $(DIR_MLX) -lXext -lX11 -lbsd -l mlx
+	MLX_LNK	= -L $(DIR_MLX) -lmlx -lXext -lX11 -lbsd
 else
 	DIR_MLX = mlx_macos/
 	MLX_LNK	= -L $(DIR_MLX) -l mlx -framework OpenGL -framework AppKit
@@ -58,7 +58,7 @@ endif
 MLX_INC = -I ${DIR_MLX}
 MLX =	${DIR_MLX}libmlx.a
 
-LIBS = ${FT_LNK} ${MLX_LNK}
+LIBS = ${FT_LNK} ${MLX_LNK} -lm
 
 ${NAME}: title ${LIBFT} ${MLX} createobjs ${OBJS}
 	${CC} ${OBJS} ${LIBS} -o ${NAME}
@@ -89,7 +89,7 @@ ${MLX}:
 all: ${NAME}
 
 ${DIR_O}%.o:${DIR_S}%.c
-	${CC} ${CFLAGS} ${LIBFT_INC} ${MLX_INC} -I ${DIR_H} -o $@ -c $<
+	${CC} ${CFLAGS} ${LIBFT_INC} ${MLX_INC} -I ${DIR_H} -o $@ -c $< -lm
 
 clean:
 	@echo "$(RED) ██████╗██╗     ███████╗ █████╗ ███╗   ██╗██╗███╗   ██╗ ██████╗$(RESET)"
