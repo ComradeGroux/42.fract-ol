@@ -6,7 +6,7 @@
 #    By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:49:40 by vgroux            #+#    #+#              #
-#    Updated: 2022/12/06 19:02:43 by vgroux           ###   ########.fr        #
+#    Updated: 2022/12/06 19:28:47 by vgroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ RM =         rm -rf
 
 DIR_H = headers/
 DIR_S =	srcs/
-CREATE_DIR_O = @mkdir objs
+CREATE_DIR_O = @mkdir -p objs
 DIR_O =	objs/
 
 SRCS_LIST =	error.c \
@@ -60,10 +60,11 @@ MLX =	${DIR_MLX}libmlx.a
 
 LIBS = ${FT_LNK} ${MLX_LNK}
 
-${NAME}: title ${LIBFT} ${MLX} createobjs ${OBJS}
+# ${NAME}: title ${LIBFT} ${MLX} ${OBJS}
+${NAME}: ${LIBFT} ${MLX} ${OBJS}
 	@echo "$(RESET)[$(GREENGREEN)${NAME}$(RESET)]: Fractol Objects were created${GREY}"
 	${CC} ${OBJS} ${LIBS} -o ${NAME}
-	@echo "$(RESET)[$(GREENGREEN)${NAME}$(RESET)]: Fractol created !${GREY}"
+	@echo "$(RESET)[$(GREENGREEN)${NAME}$(RESET)]: Fractol created !"
 
 title:
 	@echo "$(GREENGREEN) ██████╗██████╗  █████╗  ██████╗████████╗    ██████╗ ██╗$(RESET)"
@@ -72,10 +73,6 @@ title:
 	@echo "$(GREENGREEN) ██╔══╝  ██╔══██╗██╔══██║██║        ██║╚════╝██║   ██║██║$(RESET)"
 	@echo "$(GREENGREEN) ██║     ██║  ██║██║  ██║╚██████╗   ██║      ╚██████╔╝███████╗$(RESET)"
 	@echo "$(GREENGREEN) ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝       ╚═════╝ ╚══════╝$(RESET)"
-	
-createobjs:
-	@echo "${RESET}[$(GREENGREEN)${NAME}$(RESET)]: Creating Fractol Objects...${GREY}"
-	@mkdir -p ${DIR_O}
 
 ${LIBFT}:
 	@echo "[$(GREENGREEN)${NAME}$(RESET)]: Creating Libft...${GREY}"
@@ -86,10 +83,13 @@ ${MLX}:
 	@echo "[$(GREENGREEN)${NAME}$(RESET)]: Creating MLX...$(GREY)"
 	${MAKE} -sC ${@D}
 	@echo "$(RESET)[$(GREENGREEN)${NAME}$(RESET)]: MLX Objects were created"
+	@echo "${RESET}[$(GREENGREEN)${NAME}$(RESET)]: Creating Fractol Objects...${GREY}"
 
 all: ${NAME}
 
 ${DIR_O}%.o:${DIR_S}%.c
+	@printf "\033[38;5;240m"
+	@mkdir -p ${DIR_O}
 	${CC} ${CFLAGS} ${LIBFT_INC} ${MLX_INC} -I ${DIR_H} -o $@ -c $<
 
 clean:
@@ -119,4 +119,4 @@ fclean: clean libclean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re title libclean 
