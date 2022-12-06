@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vgroux <vgroux@student.42.fr>              +#+  +:+       +#+         #
+#    By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:49:40 by vgroux            #+#    #+#              #
-#    Updated: 2022/12/06 01:25:15 by vgroux           ###   ########.fr        #
+#    Updated: 2022/12/06 18:57:50 by vgroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,9 +58,10 @@ endif
 MLX_INC = -I ${DIR_MLX}
 MLX =	${DIR_MLX}libmlx.a
 
-LIBS = ${FT_LNK} ${MLX_LNK} -lm
+LIBS = ${FT_LNK} ${MLX_LNK}
 
 ${NAME}: title ${LIBFT} ${MLX} createobjs ${OBJS}
+	@echo "$(RESET)[$(GREENGREEN)${NAME}$(RESET)]: Fractol Objects were created${GREY}"
 	${CC} ${OBJS} ${LIBS} -o ${NAME}
 	@echo "$(RESET)[$(GREENGREEN)${NAME}$(RESET)]: Fractol created !${GREY}"
 
@@ -79,17 +80,17 @@ createobjs:
 ${LIBFT}:
 	@echo "[$(GREENGREEN)${NAME}$(RESET)]: Creating Libft...${GREY}"
 	${MAKE} -sC ${@D}
-	@echo "$(RESET)[$(GREENGREEN)${NAME}$(RESET)]: Libft Objects were created\n"
+	@echo "$(RESET)[$(GREENGREEN)${NAME}$(RESET)]: Libft Objects were created"
 
 ${MLX}:
-	@echo "[$(GREENGREEN)${NAME}$(RESET)]: Creating MiniLibX...$(GREY)"
+	@echo "[$(GREENGREEN)${NAME}$(RESET)]: Creating MLX...$(GREY)"
 	${MAKE} -sC ${@D}
-	@echo "$(RESET)[$(GREENGREEN)${NAME}$(RESET)]: MLX Objects were created\n"
+	@echo "$(RESET)[$(GREENGREEN)${NAME}$(RESET)]: MLX Objects were created"
 
 all: ${NAME}
 
 ${DIR_O}%.o:${DIR_S}%.c
-	${CC} ${CFLAGS} ${LIBFT_INC} ${MLX_INC} -I ${DIR_H} -o $@ -c $< -lm
+	${CC} ${CFLAGS} ${LIBFT_INC} ${MLX_INC} -I ${DIR_H} -o $@ -c $<
 
 clean:
 	@echo "$(RED) ██████╗██╗     ███████╗ █████╗ ███╗   ██╗██╗███╗   ██╗ ██████╗$(RESET)"
@@ -98,17 +99,23 @@ clean:
 	@echo "$(RED) ██║     ██║     ██╔══╝  ██╔══██║██║╚██╗██║██║██║╚██╗██║██║   ██║$(RESET)"
 	@echo "$(RED) ╚██████╗███████╗███████╗██║  ██║██║ ╚████║██║██║ ╚████║╚██████╔╝$(RESET)"
 	@echo "$(RED)  ╚═════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═══╝ ╚═════╝ $(RESET)"
+	@echo "[$(RED)${NAME}$(RESET)]: Cleaning Fractol Objects...${GREY}"
 	${RM} ${OBJS}
 	${RM} ${DIR_O}
+	@echo "[$(RED)${NAME}$(RESET)]: Fractol Objects were cleaned${GREY}"
 
 libclean:
-	@echo "Clean de MiniLibX"
+	@echo "[$(RED)${NAME}$(RESET)]: Cleaning MLX...${GREY}"
 	${MAKE} -sC ${DIR_MLX} clean
-	@echo "Clean de libft"
+	@echo "[$(RED)${NAME}$(RESET)]: MLX Objects were cleaned${GREY}"
+	@echo "[$(RED)${NAME}$(RESET)]: Cleaning Libft...${GREY}"
 	${MAKE} -sC ${DIR_LIBFT} fclean
+	@echo "[$(RED)${NAME}$(RESET)]: Libft Objects were cleaned${GREY}"
 
 fclean: clean libclean
+	@echo "[$(RED)${NAME}$(RESET)]: Cleaning Fractol Executable...${GREY}"
 	${RM} ${NAME}
+	@echo "[$(RED)${NAME}$(RESET)]: Fractol Executable were cleaned${GREY}"
 
 re: fclean all
 
