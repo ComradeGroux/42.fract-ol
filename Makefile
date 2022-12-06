@@ -6,7 +6,7 @@
 #    By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:49:40 by vgroux            #+#    #+#              #
-#    Updated: 2022/12/06 18:57:50 by vgroux           ###   ########.fr        #
+#    Updated: 2022/12/06 19:02:43 by vgroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,7 @@ title:
 	@echo "$(GREENGREEN) ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝       ╚═════╝ ╚══════╝$(RESET)"
 	
 createobjs:
-	@echo "[$(GREENGREEN)${NAME}$(RESET)]: Creating Fractol Objects...${GREY}"
+	@echo "${RESET}[$(GREENGREEN)${NAME}$(RESET)]: Creating Fractol Objects...${GREY}"
 	@mkdir -p ${DIR_O}
 
 ${LIBFT}:
@@ -105,17 +105,17 @@ clean:
 	@echo "[$(RED)${NAME}$(RESET)]: Fractol Objects were cleaned${GREY}"
 
 libclean:
-	@echo "[$(RED)${NAME}$(RESET)]: Cleaning MLX...${GREY}"
+	@echo "${RESET}[$(RED)${NAME}$(RESET)]: Cleaning MLX...${GREY}"
 	${MAKE} -sC ${DIR_MLX} clean
-	@echo "[$(RED)${NAME}$(RESET)]: MLX Objects were cleaned${GREY}"
-	@echo "[$(RED)${NAME}$(RESET)]: Cleaning Libft...${GREY}"
+	@echo "${RESET}[$(RED)${NAME}$(RESET)]: MLX Objects were cleaned"
+	@echo "${RESET}[$(RED)${NAME}$(RESET)]: Cleaning Libft...${GREY}"
 	${MAKE} -sC ${DIR_LIBFT} fclean
-	@echo "[$(RED)${NAME}$(RESET)]: Libft Objects were cleaned${GREY}"
+	@echo "${RESET}[$(RED)${NAME}$(RESET)]: Libft Objects were cleaned"
 
 fclean: clean libclean
-	@echo "[$(RED)${NAME}$(RESET)]: Cleaning Fractol Executable...${GREY}"
+	@echo "${RESET}[$(RED)${NAME}$(RESET)]: Cleaning Fractol...${GREY}"
 	${RM} ${NAME}
-	@echo "[$(RED)${NAME}$(RESET)]: Fractol Executable were cleaned${GREY}"
+	@echo "${RESET}[$(RED)${NAME}$(RESET)]: Fractol Executable was cleaned"
 
 re: fclean all
 
