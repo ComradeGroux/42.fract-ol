@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:43:08 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/30 16:49:25 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/12/07 13:31:10 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,10 @@ int	check_double(char *str)
 	int		i;
 
 	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+		return (-1);
 	while (str[i] && (str[i] != '.' || str[i] != ',') && ft_isdigit(str[i]))
 		i++;
 	if (str[i] != '.' && str[i] != ',')
