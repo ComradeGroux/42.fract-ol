@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:00:22 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/28 19:12:03 by vgroux           ###   ########.fr       */
+/*   Updated: 2022/12/07 16:28:54 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ un ensemble de Julia\n"
 # define ERROR_EXEMPLE "Exemple d'utilisation:\n \
 	Fractal de Mandelbrot:		./fractol mandelbrot\n \
 	Fractal Burning Ship:		./fractol burningship\n \
-	Fractal de Julia:		./fractal julia 0.28 0.01\n\n"
+	Fractal de Julia:		./fractol julia 0.28 0.01\n\n"
 
 #endif
