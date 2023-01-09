@@ -6,7 +6,7 @@
 #    By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:49:40 by vgroux            #+#    #+#              #
-#    Updated: 2022/12/06 19:28:47 by vgroux           ###   ########.fr        #
+#    Updated: 2023/01/09 16:27:10 by vgroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ FT_LNK = -L ${DIR_LIBFT} -l ft
 # Compile la MiniLibX suivant l'OS
 ifeq (${shell uname}, Linux)
 	DIR_MLX = mlx_linux/
-	MLX_LNK	= -L $(DIR_MLX) -lmlx -lXext -lX11 -lbsd
+	MLX_LNK	= -L $(DIR_MLX) -lmlx -lXext -lX11 -lbsd -lm
 else
 	DIR_MLX = mlx_macos/
 	MLX_LNK	= -L $(DIR_MLX) -l mlx -framework OpenGL -framework AppKit

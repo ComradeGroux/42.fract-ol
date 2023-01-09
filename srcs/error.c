@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:43:08 by vgroux            #+#    #+#             */
-/*   Updated: 2022/12/07 13:31:10 by vgroux           ###   ########.fr       */
+/*   Updated: 2023/01/09 16:25:33 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_error_arg(int errcode)
 
 int	ft_scandale(t_data *data, char **argv, char *fractal_name)
 {
-	if (!ft_strncmp(fractal_name, "mandelbrot", ft_strlen(fractal_name)))
+	if (ft_strncmp(fractal_name, "julia", ft_strlen(fractal_name)))
 		return (ID_ERROR_WRONG_FRACTAL_NAME);
 	else if (!ft_strncmp(fractal_name, "julia", ft_strlen(fractal_name)))
 	{
