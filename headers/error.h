@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:00:22 by vgroux            #+#    #+#             */
-/*   Updated: 2022/12/07 16:28:54 by vgroux           ###   ########.fr       */
+/*   Updated: 2023/01/18 14:17:22 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define ERROR_H
 
 # define ID_ERROR_WRONG_FRACTAL_NAME 1
-# define ERROR_WRONG_FRACTAL_NAME  "Mauvais non de fractal.\n"
+# define ERROR_WRONG_FRACTAL_NAME  "Mauvais nom de fractal.\n"
 
 # define ID_ERROR_NBR_ARG 2
 # define ERROR_NBR_ARG "Nombre d'arguments non valide.\n"
@@ -23,9 +23,12 @@
 # define ERROR_FLOAT "Vous devez entrer un nombre a virgule pour generer \
 un ensemble de Julia\n"
 
+# define ID_ERROR_WRONG_FRACTAL_NAME_OR_ARG 4
+# define ERROR_WRONG_NAME_ARG "Nombre d'argument non valide pour la fractale choisie\n"
+
 # define ERROR_EXEMPLE "Exemple d'utilisation:\n \
 	Fractal de Mandelbrot:		./fractol mandelbrot\n \
 	Fractal Burning Ship:		./fractol burningship\n \
-	Fractal de Julia:		./fractol julia 0.28 0.01\n\n"
+	Fractal de Julia:		./fractol julia 0.28 0.01\n"
 
 #endif
