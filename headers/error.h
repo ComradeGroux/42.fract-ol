@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:00:22 by vgroux            #+#    #+#             */
-/*   Updated: 2023/01/18 14:17:22 by vgroux           ###   ########.fr       */
+/*   Updated: 2023/01/19 17:33:57 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@
 un ensemble de Julia\n"
 
 # define ID_ERROR_WRONG_FRACTAL_NAME_OR_ARG 4
-# define ERROR_WRONG_NAME_ARG "Nombre d'argument non valide pour la fractale choisie\n"
+# define ERROR_WRONG_NAME_ARG "Nombre d'argument non valide pour la fractale \
+choisie\n"
 
 # define ERROR_EXEMPLE "Exemple d'utilisation:\n \
 	Fractal de Mandelbrot:		./fractol mandelbrot\n \
