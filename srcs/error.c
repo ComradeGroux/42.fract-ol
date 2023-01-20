@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:43:08 by vgroux            #+#    #+#             */
-/*   Updated: 2023/01/18 15:13:35 by vgroux           ###   ########.fr       */
+/*   Updated: 2023/01/20 15:47:05 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	ft_error_arg(int errcode)
 
 int	ft_scandale(t_data *data, char **argv, char *fractal_name)
 {
-	if (ft_strncmp(fractal_name, "julia", ft_strlen(fractal_name)))
+	if (ft_strncmp(fractal_name, "julia", 5))
 		return (ID_ERROR_WRONG_FRACTAL_NAME_OR_ARG);
-	else if (!ft_strncmp(fractal_name, "julia", ft_strlen(fractal_name)))
+	else if (!ft_strncmp(fractal_name, "julia", 5))
 	{
 		if (check_double(argv[2]) != -1 && check_double(argv[3]) != -1)
 		{
@@ -53,10 +53,10 @@ int	ft_check_arg(t_data *data, int argc, char **argv)
 	fractal_name = ft_strtocase(argv[1], ft_tolower);
 	if (argc == 2)
 	{
-		if (ft_strncmp(fractal_name, "mandelbrot", ft_strlen(fractal_name))
-			&& ft_strncmp(fractal_name, "burningship", ft_strlen(fractal_name)))
+		if (ft_strncmp(fractal_name, "mandelbrot", 10)
+			&& ft_strncmp(fractal_name, "burningship", 11))
 			return (ID_ERROR_WRONG_FRACTAL_NAME_OR_ARG);
-		if (!ft_strncmp(fractal_name, "julia", ft_strlen(fractal_name)))
+		if (!ft_strncmp(fractal_name, "julia", 5))
 			return (ID_ERROR_NBR_ARG);
 	}
 	else if (argc == 4)

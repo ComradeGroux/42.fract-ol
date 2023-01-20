@@ -6,7 +6,7 @@
 /*   By: vgroux <vgroux@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:37:23 by vgroux            #+#    #+#             */
-/*   Updated: 2022/11/30 16:42:35 by vgroux           ###   ########.fr       */
+/*   Updated: 2023/01/20 15:50:32 by vgroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	main(int argc, char **argv)
 	if (err == 0)
 	{
 		data.type = choose_fractal(ft_strtocase(argv[1], ft_tolower));
+		if (data.type == -1)
+			ft_error_arg(ID_ERROR_WRONG_FRACTAL_NAME);
 		mlx_start(&data);
 		fractal_render(&data);
 		mlx_key_hook(data.win, key_hook, &data);
